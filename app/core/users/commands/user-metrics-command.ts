@@ -36,7 +36,7 @@ export default class UserMetricsCommand {
           inputData.userId,
         )
 
-        const totalMealsOnuyDiet =
+        const totalMealsOutDiet =
           await this.userRepository.getTotalMealsOutDiet(inputData.userId)
 
         const mealsInOrder = await this.userRepository.getOrderedMeals(
@@ -59,7 +59,7 @@ export default class UserMetricsCommand {
         return {
           totalMeals: totalMeals[0].totalMeals,
           totalMealsOnDiet: totalMealsOnDiet[0].totalMealsOnDiet,
-          totalMealsOutDiet: totalMealsOnuyDiet[0].totalMealsOutDiet,
+          totalMealsOutDiet: totalMealsOutDiet[0].totalMealsOutDiet,
           bestDietSequence: bestMealSequence,
         }
       } else {
