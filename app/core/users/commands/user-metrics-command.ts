@@ -44,21 +44,16 @@ export default class UserMetricsCommand {
         )
 
         let bestMealSequence = 0
-        let isSequenceStarted = false
-        let stopSequence = false
+        let mealsSequence = ''
 
-        while (!stopSequence && mealsInOrder.length > 0) {
-          for (const meal of mealsInOrder) {
-            if (!isSequenceStarted && meal.is_on_diet === 1) {
-              isSequenceStarted = true
-              bestMealSequence++
-            } else if (isSequenceStarted && meal.is_on_diet === 1) {
-              bestMealSequence++
-            } else {
-              stopSequence = true
-              break
-            }
-          }
+        for (const meal of mealsInOrder)
+          mealsSequence += String(meal.is_on_diet)
+
+        const onDietSequences = mealsSequence.split('0')
+
+        for (const sequence of onDietSequences) {
+          if (sequence.length > bestMealSequence)
+            bestMealSequence = sequence.length
         }
 
         return {
