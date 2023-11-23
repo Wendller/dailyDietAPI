@@ -1,0 +1,35 @@
+{
+  "name": "dailydietapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch app/core/server.ts",
+    "lint": "eslint app --ext .ts --fix",
+    "test": "vitest",
+    "knex": "node --no-warnings --loader tsx ./node_modules/.bin/knex"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^2.1.0",
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20.9.2",
+    "@types/supertest": "^2.0.16",
+    "eslint": "^8.54.0",
+    "supertest": "^6.3.3",
+    "tsx": "^4.1.4",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  },
+  "dependencies": {
+    "@fastify/cookie": "^9.2.0",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.24.3",
+    "knex": "^3.0.1",
+    "sqlite3": "^5.1.6",
+    "zod": "^3.22.4"
+  }
+}
