@@ -17,7 +17,7 @@ export async function usersRoutes(app: FastifyInstance) {
     usersController.listMeals,
   )
   app.get<{ Params: IParams }>(
-    '/metrics/:userId',
+    '/:userId/metrics',
     { preHandler: [checkSessionIsActive] },
     usersController.metrics,
   )
